@@ -121,6 +121,7 @@ body.lock {
   line-height: 111%;
   color: var(--navy-blue);
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .title-3-mobile {
@@ -130,6 +131,7 @@ body.lock {
   line-height: 111%;
   color: var(--navy-blue);
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .title-3 {
@@ -305,14 +307,12 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
-  margin-bottom: 40px;
 }
 
 .header-contacts-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 48px;
 }
 
 .header-contact {
@@ -479,7 +479,7 @@ body {
     font-size: 16px;
     line-height: 150%;
     gap: 40px;
-    margin-top: 40px;
+
   }
 }
 @media screen and (min-width: 1158px) {
@@ -1115,7 +1115,7 @@ background-image: linear-gradient(
 
 .form-checkbox-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   margin-bottom: 24px;
   font-size: 12px;
@@ -1192,7 +1192,7 @@ background-image: linear-gradient(
   }
   .form-checkbox-label {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     line-height: 1.4;
   }
 
@@ -1204,7 +1204,7 @@ background-image: linear-gradient(
   }
 
   .checkbox-empty {
-    margin-top: 2px; /* выравнивание квадратика */
+    margin-top: 2px; 
   }
 
 }
