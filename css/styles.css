@@ -307,6 +307,7 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
+  margin-bottom: 40px;
 }
 
 .header-contacts-list {
@@ -399,7 +400,6 @@ body {
       visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Видимое состояние */
   .header-mobile-menu.is-open {
     opacity: 1;
     visibility: visible;
@@ -510,15 +510,12 @@ body {
   padding: 72px 0;
   margin-left: auto;
   margin-right: auto;
-   background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url("../images/people-office.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+   background: 
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    image-set(
+      url("../images/people-office/people-office.jpg") 1x,
+      url("../images/people-office/people-office@2x.jpg") 2x
+    )
 }
 
 
@@ -545,26 +542,69 @@ background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/people-office.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    image-set(
+      url("../images/people-office/Dark-mobile.jpg") 1x,
+      url("../images/people-office/Dark-mobile@2x.jpg") 2x
+    )
+  
 }
+.advantages-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 72px 24px; /* 72px між рядами, 24px між колонками */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Картка */
+.advantages-cards-item {
+  flex: 1 1 100%; /* мобільна версія: 1 картка на ряд */
+}
+
+/* Іконка */
+.advantages-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Текст усередині картки */
+.advantages-card-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #2e2f42;
+  margin-bottom: 8px;
+  text-align: center; /* мобільна версія */
+}
+
+.advantages-card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #434455;
+  text-align: center; /* мобільна версія */
+}
+
+
 }
 @media screen and (min-width: 768px) {
   .hero {
     max-width: 768px;
     padding: 112px 0;
-    background-image: linear-gradient(
+    background: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/people-office.jpg");
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    image-set(
+      url("../images/people-office/Dark-bg.jpg") 1x,
+      url("../images/people-office/Dark-bg@2x.jpg") 2x
+    )
   }
   .hero-title {
     max-width: 496px;
@@ -575,11 +615,18 @@ background-image: linear-gradient(
   .hero {
     max-width: 1440px;
     padding: 188px 0;
+    background: 
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    image-set(
+      url("../images/people-office/people-office.jpg") 1x,
+      url("../images/people-office/people-office@2x.jpg") 2x
+    )
+
   }
   .hero-title {
     margin-bottom: 48px;
   }
-}
+
 .advantages-cards-list {
   display: flex;
   flex-direction: column;
@@ -594,17 +641,24 @@ background-image: linear-gradient(
 .advantages-card-title {
   margin-bottom: 8px;
 }
+}
 
 @media screen and (min-width: 768px) {
   .advantages-cards-list {
     flex-direction: row;
-    column-gap: 24px;
+    gap: 24px;
     row-gap: 72px;
+    flex-wrap: wrap;
   }
   .advantages-cards-item {
-    flex-basis: calc((100% - 24px) / 2);
+    flex: 1 1 calc((100% - 24px) / 2);
+  }
+  .advantages-card-title,
+  .advantages-card-text {
+    text-align: center; /* вирівнювання як у макеті */
   }
 }
+
 @media screen and (min-width: 1158px) {
   .advantages-cards-item {
     flex-basis: calc((100% - 72px) / 4);
